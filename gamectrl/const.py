@@ -1,0 +1,208 @@
+# -*- coding:gb2312 -*-
+# -*- $Id: const.py 2 2009-04-20 03:10:36Z fengyu05 $ -*-
+# 常量模块
+
+import math
+
+# 框架常数
+OPEN_LEVEL = 5
+MAX_LEVEL = 8
+
+WIN_WIDTH = 824
+WIN_HEIGHT = 730
+WIN_SIZE = (WIN_WIDTH,WIN_HEIGHT)
+FONT_SIZE = 18
+FPS = 30 # 帧数
+INIT_HEIGHT= 680 # 球和栏杆所在的高度
+DROP_LINE = 730 # 下落高度, y值大于它时球落下
+SAVE_LINE = 710 # 救球线，在这条线以上角碰撞是可以救球的
+MAIN_WIN_WIDTH = 600 # 游戏游戏宽度
+MIN_TIME = 1.0 / 41.0 # 逻辑帧最大时间片
+MIN_RENDER_AMOUNT = 5 #在卡的情况下逻辑帧执行5次，必须执行一次渲染帧
+
+TEXT_POS_X = MAIN_WIN_WIDTH + 25
+HP_POS = (MAIN_WIN_WIDTH + 30, 200) # 血槽位置
+EM_POS = (MAIN_WIN_WIDTH + 30, 400) # 能量槽位置
+HELP_POS = (100, 30)
+
+HP_LENGTH = 170 # 血槽长度
+HP_HEIHGT = 25 # 血槽高度
+SOUND_DEFALUT_FREQUENCY = 22050
+SOUND_BUFFER = 128
+
+ITEMBOX_WIDTH = 198 # 道具栏长度
+ITEMBOX_HEIGHT = 50 # 道具栏高度
+ITEMBOX_SIZE = 4 # 道具栏大小
+ITEMBOX_POS = (MAIN_WIN_WIDTH + 12,600)
+ITEMBOX_RELATED_POS = (-10, -10)# 相对位置
+
+COLOR_WHITE = (255,255,255)
+COLOR_BLACK = (0,0,0)
+
+# Grids 常数
+GRID_SIZE = 50 # 格子大小
+GRID_NUM_X = 12 # 一行的格子最大数量:16
+GRID_NUM_Y = 15 # 一列的格子最大数量
+
+
+# Section Id
+MENU_SECTION = 1
+BALL_SECTION = 2
+OVER_SECTION = 3
+
+
+# 效果常数
+FIRE = 1
+ICE = 2
+THUNDER = 3
+
+INIT_POWER_TYPE = ICE
+
+# ctrl_bar常数
+CTRL_BAR_WIDTH = 140 # 控制栏的默认宽度
+CTRL_BAR_HEIGHT = 0
+CTRL_BAR_STYLE_BOTTOM = 0 # 下部的挡板
+CTRL_BAR_STYLE_SIDES = 1 # 两边的挡板
+CTRL_BAR_INIT_POS = (MAIN_WIN_WIDTH / 2 , INIT_HEIGHT) # 挡板初始位置
+
+CTRL_BAR_LIFE = 600
+
+CTRL_ENERYG_ADD = 5 # 消灭砖头时增加能量
+CTRL_SKILL_ENERYG = 75 # 一次技能的能量
+
+# 控制栏不同能量类型的默认数值
+# 加速度
+CTRL_ACCELERATION = [0, 80, 70, 90] # 0, FIRE, ICE, THUNDER
+# 没外力时的速度衰减
+CTRL_SPEED_WEAKEN = [0, 30, 30, 20]
+# 杆对球的摩擦
+CTRL_FRICTION = [0, 1, 0.5, 1.5]
+# 最大速度
+CTRL_MAX_SPEED = [0, 800, 900, 900 ]
+# 最大生命力
+CTRL_MAX_LIFE = [0, 700, 800, 600]
+# 最大加速度
+CTRL_MAX_ACCELERATION = [0, 150, 150, 200]
+# 最大能量
+CTRL_MAX_ENERGY = [0, 100, 100, 100]
+
+
+# ball常数
+BALL_RADIUS = GRID_SIZE / 2
+BALL_HIT_BAR_MID = 1
+BALL_HIT_BAR_CORNER = 2
+BALL_INIT_POS = (MAIN_WIN_WIDTH / 2, INIT_HEIGHT) # 球的初始位置
+BALL_MAX_SPEED = 700
+BALL_SLOW_SPEED = 100
+BALL_LIFE = 6
+BALL_NOT_DROP = False # 球不下落
+BALL_MIN_DETA = 0.01
+BALL_SAVE_MIN_ANGLE = 5 * math.pi / 4
+BALL_SAVE_MAX_ANGLE = 7 * math.pi / 4
+BALL_FIRST_QURD = math.pi / 2
+BALL_SECOND_QURD = math.pi
+BALL_THIRD_QURD = 3 * math.pi / 2
+BALL_FORTH_QURD = 2 * math.pi
+BALL_MIN_SPEEDX = 100
+
+BALL_SKILL_TIME = 1.0 # 球释放技能时间
+
+# 球不同能量类型的默认数值
+BALL_SPEED = [0, 650, 600, 700]
+BALL_DAMAGE = [0, 120, 100, 90]
+BALL_STAY_TIME = [0, 0.08, 0.03, 0.13]
+BALL_ABILITY = [0, FIRE, ICE, THUNDER]
+BALL_SKILL_RANGE_X = [0, 3, 1, 1]
+BALL_SKILL_RANGE_Y = [0, 2, 2, 5]
+BALL_SKILL_DAMAGE = [0, 70, 150, 100]
+
+
+BALL_MIN_ANGLE = (
+		(0, math.pi / 12),
+		(11 * math.pi / 12, math.pi),
+		(math.pi, 13 * math.pi / 12),
+		(23 * math.pi / 12 , 2 * math.pi)
+		)
+BALL_ANGLE_DELTA = 2 * math.pi / 45
+
+
+
+
+# 动画参数
+ANIM_EFFECT_MAX_NUM = 20 # 效果精灵总数
+ANIM_ITEM_MAX_NUM = 20 #物品精灵总数
+
+# Brick常数
+BRICK_INIT_HEIGHT = 6 # 初始时砖头高度
+BRICK_TYPE_NUM = 6  # 砖的类型数量
+BRICK_ENERGY_RATE = 10
+MATERIAL_FACTOR = 5
+
+# 关卡常数
+NEXT_FOLLOWING_TIME = 15 # 砖头下压时间间隔
+
+# 砖的状态
+BRICK_NORMAL = 0
+BRICK_DEATH = 1
+BRICK_DAMAGE = 2
+
+
+# wall常数
+SIDES_WALL_TAG = 0
+UP_WALL_TAG = 1
+
+
+# 方向
+UP = 1
+RIGHT = 2
+DOWN = 4
+LEFT = 8
+
+
+# 砖类型
+MATERIAL_FACTOR = 5
+
+
+# 砖的状态
+BRICK_CREATE = -1
+BRICK_NORMAL = 0
+BRICK_DEATH = 1
+BRICK_BEHIT = 2
+BRICK_IGNORE = 3
+
+
+
+
+# 物品常数
+ITEM_MAX_NUM = 10 #常数最大的道具数量
+
+ITEM_TYPE_NUM = 10 #道具种类
+ITEM_TYPE_FIRE_BALL = 1
+ITEM_TYPE_ICE_BALL = 2
+ITEM_TYPE_THUNDER_BALL = 3
+ITEM_TYPE_POWER = 3
+
+
+ITEM_TYPE_ADD_BAR_LIFE = 4
+ITEM_TYPE_ADD_BAR_EN = 5
+
+ITEM_TYPE_ADD_BAR_ACC = 6
+ITEM_TYPE_ADD_BAR_LEN = 7
+ITEM_TYPE_TIME_SLOW = 8
+ITEM_TYPE_ADD_DAMAGE = 9
+
+ITEM_TYPE_SUB_BAR_LIFE = 10
+
+
+ITEM_LIFE = 500
+ITEM_STATUS_CREATE = 1
+ITEM_STATUS_KILL = 0
+ITEM_STATUS_ACTIVE = 2 # 在下落的过程中
+ITEM_STATUS_IN_BRICK = 3 # 在砖头里面
+ITEM_SPEED = 150
+ITEM_INTERVAL = 4
+ITEM_LIFE = 500
+ITEM_IN_BRICK_RATE = 25 # 15%的概率物品会掉落进砖
+ITEM_IN_RATE_FACTOR = 5 # 等级对物品落入砖块的影响
+
+ITEM_RATE_BALL_TYPE = 50 # 能量球出现概率
